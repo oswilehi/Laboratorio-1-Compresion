@@ -10,6 +10,12 @@ namespace Prueba_1._0__Lab1
     {
         static void Main(string[] args)
         {
+            DeCompression tool = new DeCompression();
+            Console.WriteLine("De/Compression program\nWrite a ");
+            string s = Console.ReadLine();
+            Console.WriteLine(tool.RLE_compression(s));
+            Console.ReadLine();
+            
         }
     }
 }
