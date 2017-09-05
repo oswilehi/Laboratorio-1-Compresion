@@ -27,5 +27,17 @@ namespace Prueba_1._0__Lab1
             }
             return rle.ToString();
         }
+        public int compressionRatio(int sizeAfter, int sizeBefore)
+        {
+            return sizeAfter / sizeBefore;
+        }
+        public int compressionFactor(int sizeBefore, int sizeAfter)
+        {
+            return sizeBefore / sizeAfter;
+        }
+        public double savingPercentage(int sizeBefore, int sizeAfter)
+        {
+            return (sizeBefore - sizeAfter) / sizeBefore;
+        }
     }
 }
