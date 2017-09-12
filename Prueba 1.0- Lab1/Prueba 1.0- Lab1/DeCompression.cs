@@ -41,5 +41,42 @@ namespace Prueba_1._0__Lab1
         {
             return (sizeBefore - sizeAfter) / sizeBefore;
         }
+
+        public void RLE_decompression(string filepath)
+        {
+            using (var file = new FileStream(filepath, FileMode.Open)) 
+            {
+                using (var currentFile = new BinaryReader(file))
+                {
+                    var bytes = currentFile.ReadBytes((int)file.Length); //aconsejable 1024, devuelve el ascci de las letras, no es necesario convertir
+                    int count = 0;
+                    using (var outputFile = new FileStream("C:\\Users\\jsala\\test2.txt", FileMode.Append))
+                    {
+                        using (var writer = new BinaryWriter(outputFile, Encoding.ASCII))
+                        {
+                            for (int i = 0; i < bytes.Length; i++)//fijo ya se que el primero es un número 
+                            {
+                                count = bytes[i];
+                                while (count > 0)
+                                {
+                                    var c = (char)i;
+                                    writer.Write(c);
+                                    writer.Write(bytes[i]);
+                                    count--;
+                                }
+                                i++;
+
+                            }
+                            
+                        }
+                    }
+                   
+                                        
+                }
+            }
+        }
+
+
+
     }
 }

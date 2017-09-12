@@ -59,7 +59,6 @@ namespace Prueba_1._0__Lab1
                     var bytes = currentFile.ReadBytes(1024); //aconsejable 1024, devuelve el ascci de las letras, no es necesario convertir
                     while (bytes.Length > 0)
                     {
-                        tool.RLE(bytes);
                         using (var outputFile = new FileStream("C:\\Users\\jsala\\test2.txt", FileMode.Append))
                         {
                             using (var writer = new BinaryWriter(outputFile, Encoding.ASCII))
