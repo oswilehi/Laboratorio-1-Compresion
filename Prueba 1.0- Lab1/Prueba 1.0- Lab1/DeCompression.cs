@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 
 namespace Prueba_1._0__Lab1
@@ -11,7 +12,7 @@ namespace Prueba_1._0__Lab1
     {
         
     
-        public string RLE_compression(string data)
+        public string RLE_compression(string data) 
         {
             StringBuilder rle = new StringBuilder();
             for (int i = 0; i < data.Length; i++)
@@ -27,6 +28,7 @@ namespace Prueba_1._0__Lab1
             }
             return rle.ToString();
         }
+        
         public int compressionRatio(int sizeAfter, int sizeBefore)
         {
             return sizeAfter / sizeBefore;
